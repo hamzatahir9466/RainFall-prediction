@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather Predictor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+      
+        <span class="navbar-text">
+            Welcome to Weather Predictor
+        </span>
+
+    </nav>
+    <div class="container-fluid">
+      <div class="row wrapper">
+            <aside class="col-12 col-lg-2  bg-dark">
+              <nav class="navbar navbar-expand-sm navbar-dark bg-dark align-items-start flex-sm-column flex-row">
+                  
+                  <a href class="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
+                     <span class="navbar-toggler-icon"></span>
+                  </a>
+                  <div class="collapse navbar-collapse sidebar">
+                      <ul class="flex-column navbar-nav w-100 justify-content-between">
+                          <li class="nav-item active">
+                              <a class="nav-link " href="#" onclick="window.location.href='index.html'"> <span class="">Home</span></a>
+                          </li>
+                          
+                            
+                       
+                         
+                      </ul>
+                  </div>
+              </nav>
+          </aside>
+       <!--   <main class="col bg-faded py-3">-->
+            <div class=" col bg-faded py-3 card ">
+            <div class="jumbotron card-header text-center">
+                <h2> </h2> 
+                <p>Please provide correct information....</p>
+            </div>
+
+
+
+            <div class="container-fluid card-body">
+                <!--first name-->
+               <div id="msg"></div>
+                <form:form action="savePatient" modelAttribute="patient" method="POST" class="was-validated">
+                <h4></h4> <br><br>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Temp High F</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input1" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div> 
+
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Temp Avg F</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input2" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Temp Low F</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input3" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Dew Pointing High F</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input4" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Dew Pointing Avg F</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input5" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Dew Point Low F</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input6" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div> 
+
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Humidity  High Percent</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input7" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Humidity Avg Percent</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input8" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Humidity low Percent</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input9" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Sea Level Pressure Avg Inches</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input10" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+
+
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Visibility High Miles</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input11" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div> 
+
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Visibility Avg Miles</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input12" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Visibility Low Miles</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input13" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Wind High MPH</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input14" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Wind Avg MPH</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input15" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Wind Gust MPH</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input16" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+                <div class=" row form-group " >
+                        <div class=" col-lg-3">
+                            <label  >Percipitation Sum Inches</label>
+                        </div>
+                    
+                        <div class=" col-lg-7">
+                            <input type="text" class="form-control " id="input17" value="" placeholder="Please enter"  required>
+                            <div class="valid-feedback ">Valid.</div>
+                            <div class="invalid-feedback ">Please fill out this field.</div>
+                        </div>
+                </div>
+              
+                 <br>
+                
+
+                 <br>
+               
+                <div id="msg"></div>
+                <div class="row form-group  justify-content-center">
+                  <button type="submit" onclick="getResult()" class="btn btn-primary col-lg-3">Submit</button>
+               </div>
+
+               <br><br><br>
+              
+                </form:form>
+            </div>
+            
+            </div>
+    <!--      </main>-->
+          
+      </div>
+      
+  </div>
+      
+  <footer class="footer fixed-bottom navbar-light bg-light">
+      
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">� 2019 Copyright:
+          <a href="#" > Weather Predictor</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>
+      
+
+    
+
+</body>
+<script>
+function getResult()
+{
+    var inputs=[];
+    var input1=inputs[0]= document.getElementById("input1").value;
+    var input2=inputs[1]= document.getElementById("input2").value;
+    var input3= inputs[2]=document.getElementById("input3").value;
+    var input4= inputs[3]=document.getElementById("input4").value;
+    var input5= inputs[4]=document.getElementById("input5").value;
+    var input6= inputs[5]=document.getElementById("input6").value;
+    var input7= inputs[6]=document.getElementById("input7").value;
+    var input8= inputs[7]=document.getElementById("input8").value;
+    var input9= inputs[8]=document.getElementById("input9").value;
+    var input10= inputs[9]=document.getElementById("input10").value;
+    var input11= inputs[10]=document.getElementById("input11").value;
+    var input12= inputs[11]=document.getElementById("input12").value;
+    var input13= inputs[12]=document.getElementById("input13").value;
+    var input14= inputs[13]=document.getElementById("input14").value;
+    var input15= inputs[14]=document.getElementById("input15").value;
+    var input16= inputs[15]=document.getElementById("input16").value;
+    var input17= inputs[16]=document.getElementById("input17").value;
+
+   //var json ={"daydata":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]};
+
+  var json ={"daydata":[parseInt(input1),parseInt(input2),parseInt(input3),parseInt(input4),parseInt(input5),parseInt(input6),
+  parseInt(input7),parseInt(input8),parseInt(input9),parseInt(input10),parseInt(input11),parseInt(input12),parseInt(input13),parseInt(input14),parseInt(input15),parseInt(input16),parseInt(input17)]};
+
+    alert(JSON.stringify(json))
+    alert(inputs);
+    //alert(input1+" "+input2+" "+input3+" "+input4+" "+input5+" "+input6+" "+input7+" "+input8+" "+input9+" "+input10+" "+input11+" "+input12+" "+input13+" "+input14+" "+input15+" "+input16+" "+input17);
+    
+
+
+  $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:5000/api",
+        data: JSON.stringify(json),
+        headers: {
+                'Content-Type': 'application/json',
+                "Accept": 'application/json',
+                "Access-Control-Allow-Origin": "*",
+            },
+        dataType: 'json',
+        success: function (data) 
+        {
+      //  alert(data['predictiondata'])
+
+     //   alert(JSON.stringify(data));
+     //   console.log(JSON.stringify(data));
+        localStorage.setItem("result",data['predictiondata']);
+
+//var result= localStorage.getItem("result");
+//alert(result);
+window.location = 'result.html';
+        },
+        error: function (x, t, m) {
+          if (t === "timeout") {
+           // alert('Timeout');
+          } else {
+           alert(t);
+          }
+        }
+    });
+
+  
+}
+</script>
+</html>
